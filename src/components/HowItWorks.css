@@ -1,0 +1,71 @@
+.how-it-works-section {
+  padding: 60px 0 100px;
+  background-color: var(--color-bg);
+}
+
+.section-title-small {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 48px;
+  color: var(--color-navy);
+}
+
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .steps-container {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+  }
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.step-number {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-indigo);
+  background-color: var(--color-white);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+}
+
+.step-text {
+  font-weight: 600;
+  color: var(--color-navy);
+}
+
+.step-divider {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .step-divider {
+    display: block;
+    height: 2px;
+    background-color: var(--color-border);
+    flex: 1;
+    margin: 0 24px;
+    margin-top: -24px; /* Align visually with the circle */
+  }
+}

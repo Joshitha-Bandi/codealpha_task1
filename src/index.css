@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-white: #FFFFFF;
+  --color-indigo: #5B4BDB;
+  --color-indigo-hover: #4A3BBE;
+  --color-navy: #171A2B;
+  --color-navy-light: #31354d;
+  --color-lavender: #F1EFFF;
+  --color-bg: #F8F9FC;
+  --color-blue: #6C8CFF;
+  --color-border: #E7E8F0;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.04);
+  
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-navy);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+  transition: all 0.2s ease;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* Layout Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-2 { gap: 8px; }
+.gap-4 { gap: 16px; }
+.gap-6 { gap: 24px; }
+.gap-8 { gap: 32px; }
+
+/* Custom Scrollbar for Textareas */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4C6D7;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A3A6BC;
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-indigo) 0%, #7668EA 100%);
+  color: var(--color-white);
+  padding: 16px 32px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 1.125rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(91, 75, 219, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(91, 75, 219, 0.35);
+  background: linear-gradient(135deg, var(--color-indigo-hover) 0%, var(--color-indigo) 100%);
+}
+
+.btn-secondary {
+  background: var(--color-lavender);
+  color: var(--color-indigo);
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.btn-secondary:hover {
+  background: #E4DFFF;
+}
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  color: var(--color-navy-light);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+}
+
+.btn-icon:hover {
+  background: var(--color-bg);
+  color: var(--color-indigo);
+  border-color: #D1D3E0;
+}
+
+/* Shared Card styles */
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+/* Animations */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
